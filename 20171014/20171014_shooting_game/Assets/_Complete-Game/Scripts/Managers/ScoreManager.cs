@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace CompleteProject
 {
@@ -8,7 +9,8 @@ namespace CompleteProject
     {
         public static int score;        // The player's score.
         private EnemyManager[] scripts;
-        private int nextTargetScore = 100;
+        private const int INTERVAL_UPDATE = 100;
+        private int nextTargetScore = INTERVAL_UPDATE;
 
         Text text;                      // Reference to the Text component.
 
@@ -53,7 +55,7 @@ namespace CompleteProject
 
             // 100ptごとにspown率を更新
             if(score >= nextTargetScore){
-                nextTargetScore += 100;
+                nextTargetScore += INTERVAL_UPDATE;
                 foreach (var script in scripts)
                 {
                     script.UpdateSpown();
