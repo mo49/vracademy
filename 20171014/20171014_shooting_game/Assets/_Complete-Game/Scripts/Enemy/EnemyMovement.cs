@@ -10,7 +10,6 @@ namespace CompleteProject
         EnemyHealth enemyHealth;        // Reference to this enemy's health.
         UnityEngine.AI.NavMeshAgent nav;               // Reference to the nav mesh agent.
 
-
         void Awake ()
         {
             // Set up the references.

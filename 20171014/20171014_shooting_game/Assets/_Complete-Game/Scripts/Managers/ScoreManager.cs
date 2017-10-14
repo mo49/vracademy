@@ -9,8 +9,10 @@ namespace CompleteProject
     {
         public static int score;        // The player's score.
         private EnemyManager[] scripts;
-        private const int INTERVAL_UPDATE = 100;
-        private int nextTargetScore = INTERVAL_UPDATE;
+        private const int INTERVAL_UPDATE_COUNT = 100;
+        private const int INTERVAL_UPDATE_SPEED = 200;
+        private int nextTargetScore1 = INTERVAL_UPDATE_COUNT;
+        private int nextTargetScore2 = INTERVAL_UPDATE_SPEED;
 
         Text text;                      // Reference to the Text component.
 
@@ -54,14 +56,21 @@ namespace CompleteProject
             }
 
             // 100ptごとにspown率を更新
-            if(score >= nextTargetScore){
-                nextTargetScore += INTERVAL_UPDATE;
+            if(score >= nextTargetScore1){
+                nextTargetScore1 += INTERVAL_UPDATE_COUNT;
                 foreach (var script in scripts)
                 {
                     script.UpdateSpown();
                 }
             }
-
+            // 200ptごとにスピードアップ
+            if(score >= nextTargetScore2){
+                nextTargetScore2 += INTERVAL_UPDATE_SPEED;
+                foreach (var script in scripts)
+                {
+                    script.UpdateSpeed();
+                }
+            }
 
         }
     }
