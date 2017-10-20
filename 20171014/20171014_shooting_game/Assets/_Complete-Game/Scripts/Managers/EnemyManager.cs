@@ -19,6 +19,9 @@ namespace CompleteProject
             InvokeRepeating ("Spawn", spawnTime, spawnTime);
         }
 
+        void Update() {
+            Debug.Log("[score] " + ScoreManager.score);
+        }
 
         void Spawn ()
         {
