@@ -8,7 +8,6 @@ namespace CompleteProject
     public class ScoreManager : MonoBehaviour
     {
         public static int score;        // The player's score.
-        // private int score;
         private EnemyManager[] scripts;
         private const int INTERVAL_UPDATE_COUNT = 100;
         private const int INTERVAL_UPDATE_SPEED = 200;
