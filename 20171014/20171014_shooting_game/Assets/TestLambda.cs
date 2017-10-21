@@ -20,7 +20,7 @@ public class TestLambda : MonoBehaviour {
         oddNums.ToList().ForEach(num => Debug.Log("[top3]奇数 => " + num));
 
         var filteredNums1 = scores
-            .Where((num, index) => index != 0 && index != scores.Count() - 1)
+            .Where((score, index) => index != 0 && index != scores.Count() - 1)
             .Select(score => (float)score / 10);
 
         filteredNums1.ToList().ForEach(num => Debug.Log("[pattern1]最初と最後を除く数を10で割る => " + num));
