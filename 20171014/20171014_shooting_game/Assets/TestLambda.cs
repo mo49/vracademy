@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-/*
- LINQを使って配列の中から奇数の値のみコンソールに出力するプログラムを書いてみよう。
- */
-
 public class TestLambda : MonoBehaviour {
 
     IEnumerable<int> scores = Enumerable.Range(1, 10);
