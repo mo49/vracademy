@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace CompleteProject
 {
@@ -23,8 +25,25 @@ namespace CompleteProject
             if(playerHealth.currentHealth <= 0)
             {
                 // ... tell the animator the game is over.
-                anim.SetTrigger ("GameOver");
+                // anim.SetTrigger ("GameOver");
+                StartCoroutine("GameOver");
             }
         }
+
+        IEnumerator GameOver() {
+            yield return new WaitForSeconds(3);
+            anim.SetTrigger ("GameOver");
+        }
+
+        // IEnumerator WaitAnimationEnd(string name) {
+        //     bool finish = false;
+        //     while(!finish) {
+        //         if("condition") {
+
+        //         } else {
+        //             yield return new WaitForSeconds(0.1f);
+        //         }
+        //     }
+        // }
     }
 }
