@@ -13,24 +13,24 @@ public class TestLambda : MonoBehaviour {
 
     void Start () {
         var oddNums = scores
-				.Where(score => score % 2 != 0)
-				.OrderByDescending(score => score)
-				.Take(3);
+            .Where(score => score % 2 != 0)
+            .OrderByDescending(score => score)
+            .Take(3);
 
         oddNums.ToList().ForEach(num => Debug.Log("[top3]奇数 => " + num));
 
         var filteredNums1 = scores
             .Where((num, index) => index != 0 && index != scores.Count() - 1)
-			.Select(score => (float)score / 10);
+            .Select(score => (float)score / 10);
 
         filteredNums1.ToList().ForEach(num => Debug.Log("[pattern1]最初と最後を除く数を10で割る => " + num));
 
         var filteredNums2 = scores
             .Skip(1)
-			.Reverse()
-			.Skip(1)
-			.Reverse()
-			.Select(score => (float)score / 10);
+            .Reverse()
+            .Skip(1)
+            .Reverse()
+            .Select(score => (float)score / 10);
 
         filteredNums2.ToList().ForEach(num => Debug.Log("[pattern2]最初と最後を除く数を10で割る => " + num));
 
