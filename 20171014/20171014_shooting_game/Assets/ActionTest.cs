@@ -7,20 +7,32 @@ using UnityEngine;
 // -------------------------------------------
 public class ActionTest : MonoBehaviour {
 
-	[SerializeField] private ActionInput m_actionInput;
+	// [SerializeField] private ActionInput actionInput;
+
+	private ActionInput actionInput;
+
+	void Awake() {
+		// scriptの参照
+		GameObject actionInputObj = GameObject.Find("ActionInput");
+		if(actionInputObj != null){
+			actionInput = actionInputObj.GetComponent<ActionInput>();
+		}
+		if(actionInput == null){
+			Debug.Log("Cannot find 'ActionInput' script.");
+		}
+	}
 
 	void OnEnable() {
 		// アクションメソッドを登録
-		m_actionInput.AnyKeyDown += KeyDownAction;
-		m_actionInput.AnyKeyDown += ClickSpaceAction;
-		m_actionInput.ClickSpace += ClickSpaceAction;
-		Debug.Log("enabled");
+		actionInput.AnyKeyDown += KeyDownAction;
+		actionInput.AnyKeyDown += ClickSpaceAction;
+		actionInput.ClickSpace += ClickSpaceAction;
 	}
 	void OnDisable() {
 		// アクションメソッドを削除
-		m_actionInput.AnyKeyDown -= KeyDownAction;
-		m_actionInput.AnyKeyDown -= ClickSpaceAction;
-		m_actionInput.ClickSpace -= ClickSpaceAction;
+		actionInput.AnyKeyDown -= KeyDownAction;
+		actionInput.AnyKeyDown -= ClickSpaceAction;
+		actionInput.ClickSpace -= ClickSpaceAction;
 		Debug.Log("disabled");
 	}
 
