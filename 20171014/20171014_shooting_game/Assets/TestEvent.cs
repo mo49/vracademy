@@ -6,19 +6,19 @@ using UnityEngine.Events;
 public class TestEvent : MonoBehaviour {
   [SerializeField] private UnityEvent m_event;
 
-  // Use this for initialization
   void Start () {
 		if(m_event == null)
       m_event = new UnityEvent();
     m_event.AddListener(Ping);
   }
 
-	// Update is called once per frame
 	void Update () {
-
+    if(Input.anyKeyDown && m_event != null) {
+      m_event.Invoke();
+    }
 	}
 
 	void Ping() {
-    Debug.Log("Ping");
+    // Debug.Log("Ping");
   }
 }
