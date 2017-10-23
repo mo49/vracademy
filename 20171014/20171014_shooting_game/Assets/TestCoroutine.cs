@@ -14,7 +14,7 @@ public class TestCoroutine : MonoBehaviour {
 
 	}
 
-	IEnumerator Smaple() {
+	IEnumerator Sample() {
         yield return null;
     }
 }
