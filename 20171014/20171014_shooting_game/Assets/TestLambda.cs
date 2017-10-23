@@ -16,12 +16,12 @@ public class TestLambda : MonoBehaviour {
 
         // 戻り値あり
         Func<int, int> mul = x => x * x;
-        Debug.Log("[Func] mul: " + mul(5));
+        // Debug.Log("[Func] mul: " + mul(5));
 
         // 戻り値なし
         Action<int, int> sum = (x, y) => {
             int t = x + y;
-            Debug.Log("[Action] sum: " + t);
+            // Debug.Log("[Action] sum: " + t);
         };
         sum(2, 3);
 
@@ -39,24 +39,24 @@ public class TestLambda : MonoBehaviour {
             .OrderByDescending(score => score)
             .Take(3);
 
-        oddNums.ToList().ForEach(num => Debug.Log("上位3つの奇数 => " + num));
+        // oddNums.ToList().ForEach(num => Debug.Log("上位3つの奇数 => " + num));
 
         var maxOddNum1 = scores
             .Last(score => score % 2 != 0);
 
-        Debug.Log("[pattern1]最大の奇数 => " + maxOddNum1);
+        // Debug.Log("[pattern1]最大の奇数 => " + maxOddNum1);
 
         var maxOddNum2 = scores
             .Where(score => score % 2 != 0)
             .Max();
 
-        Debug.Log("[pattern2]最大の奇数 => " + maxOddNum2);
+        // Debug.Log("[pattern2]最大の奇数 => " + maxOddNum2);
 
         var filteredNums1 = scores
             .Where((score, index) => index != 0 && index != scores.Count() - 1)
             .Select(score => (float)score / 10);
 
-        filteredNums1.ToList().ForEach(num => Debug.Log("[pattern1]最初と最後を除く数を10で割る => " + num));
+        // filteredNums1.ToList().ForEach(num => Debug.Log("[pattern1]最初と最後を除く数を10で割る => " + num));
 
         var filteredNums2 = scores
             .Skip(1)
@@ -65,13 +65,13 @@ public class TestLambda : MonoBehaviour {
             .Reverse()
             .Select(score => (float)score / 10);
 
-        filteredNums2.ToList().ForEach(num => Debug.Log("[pattern2]最初と最後を除く数を10で割る => " + num));
+        // filteredNums2.ToList().ForEach(num => Debug.Log("[pattern2]最初と最後を除く数を10で割る => " + num));
 
     }
 
     void Sum(int x, int y) {
         int t = x + y;
-        Debug.Log("[Delegate] sum: " + t);
+        // Debug.Log("[Delegate] sum: " + t);
     }
 
 }
