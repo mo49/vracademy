@@ -7,33 +7,32 @@ using UnityEngine;
 // -------------------------------------------
 public class ActionTest : MonoBehaviour {
 
-	// [SerializeField] private ActionInput actionInput;
+	// [SerializeField] private InputManager inputManager;
 
-	private ActionInput actionInput;
+	private InputManager inputManager;
 
 	void Awake() {
 		// scriptの参照
-		GameObject actionInputObj = GameObject.Find("ActionInput");
-		if(actionInputObj != null){
-			actionInput = actionInputObj.GetComponent<ActionInput>();
+		GameObject inputManagerObj = GameObject.Find("InputManager");
+		if(inputManagerObj != null){
+			inputManager = inputManagerObj.GetComponent<InputManager>();
 		}
-		if(actionInput == null){
-			Debug.Log("Cannot find 'ActionInput' script.");
+		if(inputManager == null){
+			Debug.Log("Cannot find 'InputManager' script.");
 		}
 	}
 
 	void OnEnable() {
 		// アクションメソッドを登録
-		actionInput.AnyKeyDown += KeyDownAction;
-		actionInput.AnyKeyDown += ClickSpaceAction;
-		actionInput.ClickSpace += ClickSpaceAction;
+		inputManager.AnyKeyDown += KeyDownAction;
+		inputManager.AnyKeyDown += ClickSpaceAction;
+		inputManager.ClickSpace += ClickSpaceAction;
 	}
 	void OnDisable() {
 		// アクションメソッドを削除
-		actionInput.AnyKeyDown -= KeyDownAction;
-		actionInput.AnyKeyDown -= ClickSpaceAction;
-		actionInput.ClickSpace -= ClickSpaceAction;
-		Debug.Log("disabled");
+		inputManager.AnyKeyDown -= KeyDownAction;
+		inputManager.AnyKeyDown -= ClickSpaceAction;
+		inputManager.ClickSpace -= ClickSpaceAction;
 	}
 
 	void KeyDownAction() {
