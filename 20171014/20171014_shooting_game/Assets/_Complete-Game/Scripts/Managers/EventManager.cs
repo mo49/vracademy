@@ -15,9 +15,6 @@ public class EventManager : MonoBehaviour {
             }
             return mInstance;
         }
-        set {
-
-        }
     }
 
     public void setScore( int n ) {
