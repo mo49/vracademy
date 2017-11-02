@@ -16,6 +16,7 @@ namespace CompleteProject
 
         Text text;                      // Reference to the Text component.
 
+        EventManager eventManager;
 
         void Awake ()
         {
@@ -28,9 +29,14 @@ namespace CompleteProject
             scripts = GameObject.Find("EnemyManager").GetComponents<EnemyManager>();
         }
 
+        void Start() {
+            eventManager = EventManager.Instance;
+        }
 
         void Update()
         {
+            score = eventManager.getScore();
+
             // Set the displayed text to be the word "Score" followed by the score value.
             text.text = "Score: " + score;
 

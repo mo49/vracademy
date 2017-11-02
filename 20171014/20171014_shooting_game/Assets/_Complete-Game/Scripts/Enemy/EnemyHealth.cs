@@ -18,6 +18,7 @@ namespace CompleteProject
         bool isDead;                                // Whether the enemy is dead.
         bool isSinking;                             // Whether the enemy has started sinking through the floor.
 
+        EventManager eventManager;
 
         void Awake ()
         {
@@ -29,6 +30,8 @@ namespace CompleteProject
 
             // Setting the current health when the enemy first spawns.
             currentHealth = startingHealth;
+
+            eventManager = EventManager.Instance;
         }
 
 
@@ -55,7 +58,7 @@ namespace CompleteProject
 
             // Reduce the current health by the amount of damage sustained.
             currentHealth -= amount;
-            
+
             // Set the position of the particle system to where the hit was sustained.
             hitParticles.transform.position = hitPoint;
 
@@ -100,7 +103,14 @@ namespace CompleteProject
             isSinking = true;
 
             // Increase the score by the enemy's score value.
-            ScoreManager.score += scoreValue;
+            // ScoreManager.score += scoreValue;
+
+            var currentScore = eventManager.getScore();
+            currentScore += scoreValue;
+
+            eventManager.setScore(currentScore);
+
+            // Debug.Log("[currentScore]" + currentScore);
 
             // After 2 seconds destory the enemy.
             Destroy (gameObject, 2f);

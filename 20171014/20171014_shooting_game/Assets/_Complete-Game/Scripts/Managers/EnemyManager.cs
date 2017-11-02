@@ -20,7 +20,6 @@ namespace CompleteProject
         }
 
         void Update() {
-            Debug.Log("[score] " + ScoreManager.score);
         }
 
         void Spawn ()
