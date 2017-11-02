@@ -5,6 +5,11 @@
 EventManager.cs
 https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/Assets/_Complete-Game/Scripts/Managers/EventManager.cs
 
+スコアの更新  
+EnemyHealth.cs
+https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/Assets/_Complete-Game/Scripts/Enemy/EnemyHealth.cs
+
+スコアの取得  
 ScoreManager.cs
 https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/Assets/_Complete-Game/Scripts/Managers/ScoreManager.cs
 
@@ -25,11 +30,11 @@ https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/As
 
 - Survival Shooterを実行中に”Esc”キーを押すとメニュー画面が表示されます。今回はそれを新たにInputManagerクラスを作成し、そこで入力の検知をおこない、メニュー画面表示の処理をデリゲートしてみましょう。
 
-委譲先
+委譲先  
 InputManager.cs
 https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/Assets/_Complete-Game/Scripts/Managers/InputManager.cs
 
-委譲元
+委譲元  
 PauseManager.cs
 https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/Assets/_Complete-Game/Scripts/Managers/PauseManager.cs
 
