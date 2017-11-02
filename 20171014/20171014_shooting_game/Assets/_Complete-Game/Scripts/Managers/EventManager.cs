@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventManager : MonoBehaviour {
 
     private static EventManager mInstance;
-    private int num = 0;
+    private int score = 0;
 
     public static EventManager Instance {
         get {
@@ -18,10 +18,10 @@ public class EventManager : MonoBehaviour {
     }
 
     public void setScore( int n ) {
-        this.num = n;
+        this.score = n;
     }
     public int getScore() {
-        return this.num;
+        return this.score;
     }
 
 }
