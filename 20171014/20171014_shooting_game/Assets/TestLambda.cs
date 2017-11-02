@@ -41,7 +41,14 @@ public class TestLambda : MonoBehaviour {
 
         // oddNums.ToList().ForEach(num => Debug.Log("上位3つの奇数 => " + num));
 
+		var minOddNum = scores
+			.OrderBy(score => score)
+			.First(score => score % 2 != 0);
+
+		// Debug.Log("最小の奇数 => " + minOddNum);
+
         var maxOddNum1 = scores
+			.OrderBy(score => score)
             .Last(score => score % 2 != 0);
 
         // Debug.Log("[pattern1]最大の奇数 => " + maxOddNum1);

@@ -6,7 +6,7 @@ using System;
 // -------------------------------------------
 // 委譲先 Manager メソッドを実行する
 // -------------------------------------------
-public class InputManager : MonoBehaviour {
+public class ActionInput : MonoBehaviour {
 
 	public event Action AnyKeyDown;
 	public event Action ClickSpace;
@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour {
 			return;
     	}
 		if(Input.anyKeyDown && AnyKeyDown != null){
-    		AnyKeyDown(); // 処理の実行
+			AnyKeyDown(); // 処理の実行
     	}
 	}
 }
