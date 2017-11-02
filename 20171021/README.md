@@ -1,7 +1,6 @@
 ## Singleton
 
-- 現在ScoreManagerで管理しているスコアを新規でEventManagerクラスを作成。シングルトン化し、そこでスコアを管理。
-UIテキストや敵を倒したときのスコア表示・加算処理をSingletonの呼び出しに置き換えてみよう。
+- 現在ScoreManagerで管理しているスコアを新規でEventManagerクラスを作成。シングルトン化し、そこでスコアを管理。UIテキストや敵を倒したときのスコア表示・加算処理をSingletonの呼び出しに置き換えてみよう。
 
 EventManager.cs
 https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/Assets/_Complete-Game/Scripts/Managers/EventManager.cs
@@ -24,8 +23,7 @@ https://github.com/mo49/vracademy/blob/master/20171014/20171014_shooting_game/As
 
 ## Action
 
-- Survival Shooterを実行中に”Esc”キーを押すとメニュー画面が表示されます。
-今回はそれを新たにInputManagerクラスを作成し、そこで入力の検知をおこない、メニュー画面表示の処理をデリゲートしてみましょう。
+- Survival Shooterを実行中に”Esc”キーを押すとメニュー画面が表示されます。今回はそれを新たにInputManagerクラスを作成し、そこで入力の検知をおこない、メニュー画面表示の処理をデリゲートしてみましょう。
 
 委譲先
 InputManager.cs
