@@ -60,19 +60,26 @@ public class TestLambda : MonoBehaviour {
         // Debug.Log("[pattern2]最大の奇数 => " + maxOddNum2);
 
         var filteredNums1 = scores
-            .Where((score, index) => index != 0 && index != scores.Count() - 1)
+            .Skip(1)
+            .Take(scores.Count() - 2)
             .Select(score => (float)score / 10);
 
         // filteredNums1.ToList().ForEach(num => Debug.Log("[pattern1]最初と最後を除く数を10で割る => " + num));
 
         var filteredNums2 = scores
+            .Where((score, index) => index != 0 && index != scores.Count() - 1)
+            .Select(score => (float)score / 10);
+
+        // filteredNums2.ToList().ForEach(num => Debug.Log("[pattern2]最初と最後を除く数を10で割る => " + num));
+
+        var filteredNums3 = scores
             .Skip(1)
             .Reverse()
             .Skip(1)
             .Reverse()
             .Select(score => (float)score / 10);
 
-        // filteredNums2.ToList().ForEach(num => Debug.Log("[pattern2]最初と最後を除く数を10で割る => " + num));
+        // filteredNums3.ToList().ForEach(num => Debug.Log("[pattern3]最初と最後を除く数を10で割る => " + num));
 
     }
 
